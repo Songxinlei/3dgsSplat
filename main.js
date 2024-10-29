@@ -747,6 +747,7 @@ async function main() {
         // "nike.splat",
         // location.href,
         params.get("url") || "heart.splat",
+		location.href,
     );
     const req = await fetch(url, {
         mode: "cors", // no-cors, *cors, same-origin
