@@ -743,12 +743,16 @@ async function main() {
         viewMatrix = JSON.parse(decodeURIComponent(location.hash.slice(1)));
         carousel = false;
     } catch (err) {}
-    const url = new URL(
-         "head_update.splat",
-         location.href,
+	const splatType = params.get("splatType") || "head_update"; // 默认值为 "head_update"
+
+    // 根据 splatType 构建不同的 URL
+    const url = new URL(`${splatType}.splat`, location.href);
+    //const url = new URL(
+      //   "head_update.splat",
+     //    location.href,
         //params.get("url") || "heart.splat",
 		//location.href,
-    );
+   // );
     const req = await fetch(url, {
         mode: "cors", // no-cors, *cors, same-origin
         credentials: "omit", // include, *same-origin, omit
