@@ -744,7 +744,7 @@ async function main() {
         carousel = false;
     } catch (err) {}
     const url = new URL(
-         "heart.splat",
+         "head.splat",
          location.href,
         //params.get("url") || "heart.splat",
 		//location.href,
